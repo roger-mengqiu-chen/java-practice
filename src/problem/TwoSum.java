@@ -3,6 +3,10 @@ package problem;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 1
+ *
+ */
 public class TwoSum {
 	
 	/**
@@ -23,7 +27,11 @@ public class TwoSum {
 		return answer;
 	}
 	
-	
+	/**
+	 * 
+	 * time: O(n)
+	 * space: O(n)
+	 */
 	public int[] twosumWithMap(int[] nums, int target) {
 		int answer[] = new int[2];
 		Map<Integer, Integer> map = new HashMap<>();
