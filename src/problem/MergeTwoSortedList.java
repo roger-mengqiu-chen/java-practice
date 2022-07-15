@@ -31,38 +31,38 @@ public class MergeTwoSortedList {
 	/**
 	 * Non recursive solution
 	 */
-	public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
-        if(l1 == null) return l2;
-		if(l2 == null) return l1;
+	public ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
+        if(list1 == null) return list2;
+		if(list2 == null) return list1;
 		
 		ListNode head = null, tail = null;
-		if(l1.val <= l2.val) {
-			head = tail = l1;
-			l1 = l1.next;
+		if(list1.val <= list2.val) {
+			head = tail = list1;
+			list1 = list1.next;
 		}
 		else {
-			head = tail = l2;
-			l2 = l2.next;
+			head = tail = list2;
+			list2 = list2.next;
 		}
 		
-		while (l1 != null && l2 != null) {
-			if(l1.val <= l2.val) {
-				tail.next = l1;
+		while (list1 != null && list2 != null) {
+			if(list1.val <= list2.val) {
+				tail.next = list1;
 				tail = tail.next;
-				l1 = l1.next;
+				list1 = list1.next;
 			}
 			else {
-				tail.next = l2;
+				tail.next = list2;
 				tail = tail.next;
-				l2 = l2.next;
+				list2 = list2.next;
 			}
 		}
 		
-		if (l1 == null) {
-			tail.next = l2;
+		if (list1 == null) {
+			tail.next = list2;
 		}
 		else {
-			tail.next = l1;
+			tail.next = list1;
 		}
 		
 		return head;
